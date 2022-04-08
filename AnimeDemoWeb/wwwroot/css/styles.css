@@ -1,28 +1,17 @@
 ﻿
 .poster {
-    max-height: 100%;
-    width: 270px;
+    height: 450px;
+    max-width: 270px;
     object-fit: cover;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     border-radius: 3px 0 0 3px;
 }
 
-/*.poster:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    max-height: 100%;
-    width: 270px;
-    background-color: grey;
-}*/
-
 .main_block {
-    /*padding: 1em 2em;*/
     margin: 1em 5% 2em 5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     border-radius: 3px;
 }
 
@@ -32,22 +21,64 @@
 
 .info_container {
     margin-top: 0.5em;
+    padding-right: 2%;
     width: 100%;
     overflow: hidden;
+}
+
+.info_container h3 {
+    margin-bottom: 1.5%;
+}
+
+.info_container p {
+    margin: 1.5% 0;
 }
 
 .info_container h2, p {
     overflow-wrap: break-word;
 }
 
+.description_block {
+    display: block;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.description_block p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .center_format {
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.button_block a {
+    text-decoration: none;
+}
+
+.info_container, .main_block {
+    background-color: white;
+}
+
+.main_block {
+    box-shadow: rgba(71, 68, 210, 0.27) 0px 0px 0.25em, rgba(75, 145, 232, 0.5) 0px 0.25em 1em;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
+
+    .description_block {
+        overflow: auto;
+    }
+
+    .center_format {
+        margin-top: 0;
+    }
+
     .main_block {
         flex-direction: column;
         padding: 1em 0.7em;
@@ -58,16 +89,21 @@
     }
 
     .info_container {
-        margin-top: 7%;
+        margin-top: 4%;
     }
 
-    .info_container h2 {
+    .info_container h2, h3 {
         text-align: center;
+        margin-bottom: 2%;
+    }
+
+    .info_container h3 {
+        margin-bottom: 5%;
     }
 
     .poster {
-        max-width: 100%;
-        height: auto;
+        max-height: 100%;
+        width: auto;
         border-radius: 0;
     }
 
@@ -75,6 +111,18 @@
         margin: auto;
 
         background-color: blue;
+    }
+
+    .info_container, .main_block {
+        background-color: #282F44;
+    }
+
+    .info_container p, h2, h3 {
+        color: white;
+    }
+
+    .info_container h2 {
+        text-shadow: rgba(71, 68, 210, 0.27) 0px 0px 0.25em, rgba(75, 145, 232, 0.5) 0px 0.25em 1em;
     }
 }
 

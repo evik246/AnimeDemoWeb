@@ -1,6 +1,6 @@
 ﻿namespace AnimeDemoWeb.Models
 {
-    public class AnimeModelDto
+    public class AnimeCollection
     {
         public Anime[] Data { get; set; }
     }

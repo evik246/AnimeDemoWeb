@@ -1,21 +1,42 @@
-﻿@{
+﻿@model FormattedAnime
+@{
 	ViewData["Title"] = "Index";
 }
 
 <div class="center_format">
-	<div class="main_block">
-		<div class="poster_container">
-			<img class="poster" alt="" src="https://media.kitsu.io/anime/poster_images/8000/original.png" />
+	@if (Model != null) {
+		<div class="main_block">
+			<div class="poster_container">
+				<img class="poster" alt="" src=@Model.PosterUrl />
+			</div>
+			<div class="info_container">
+				<h2>@Model.CanonicalTitle</h2>
+				<h3>@Model.JapaneseTitle</h3>
+				@if (!string.IsNullOrEmpty(Model.Rating))
+				{
+				<p>Rating: @Model.Rating out of 100</p>
+				}
+				@if (!string.IsNullOrEmpty(Model.StartDate))
+				{
+					<p>Year: @Model.StartDate</p>
+				}
+				@if (!string.IsNullOrEmpty(Model.Status))
+				{
+					<p>Status: @Model.Status</p>
+				}
+				@if (!string.IsNullOrEmpty(Model.Description))
+				{
+					<div class="description_block">
+						<p>Description: @Model.Description</p>
+				</div>
+				}
+			</div>
 		</div>
-		<div class="info_container">
-			<h2>Название</h2>
-			<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую</p>
-			<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую</p>
-		</div>
-	</div>
-
-	<div>
-		<button class="button-30" role="button">Сгенерировать</button>
+	}
+	<div class="button_block">
+		<a asp-controller="Anime" asp-action="Index">
+			<input type="button" class="button-30" role="button" value="Generate" />
+		</a>
 	</div>
 </div>
 

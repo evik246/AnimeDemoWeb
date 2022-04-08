@@ -5,6 +5,7 @@ namespace AnimeDemoWeb.Models
     public class AnimeAttributes
     {
         public DateTime? CreatedAt { get; set; }
+        public string? Synopsis { get; set; }
         public string? Description { get; set; }
         public Titles? Titles { get; set; }
         //Оригинальное название
